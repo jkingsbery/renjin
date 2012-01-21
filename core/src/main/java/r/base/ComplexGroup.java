@@ -1,20 +1,70 @@
 package r.base;
 
+import org.apache.commons.math.complex.Complex;
+
+import r.jvmi.wrapper.generator.scalars.ComplexType;
+import r.lang.ComplexVector;
 import r.lang.DoubleVector;
 import r.lang.IntVector;
 import r.lang.Null;
+import r.lang.SEXP;
 
 public class ComplexGroup {
 
-  public static DoubleVector Mod(DoubleVector x) {
-    return x;
+//  public static DoubleVector Mod(DoubleVector x) {
+//    return x;
+//  }
+// 
+//  public static IntVector Mod(IntVector x) {
+//    return x;
+//  }
+//
+//  public static Null Mod(Null x) {
+//    return x;
+//  }
+//  
+  public static double Mod(Complex z){
+    return z.abs();
   }
- 
-  public static IntVector Mod(IntVector x) {
-    return x;
+  
+  public static double Arg(Complex z){
+    return z.getArgument();
   }
-
-  public static Null Mod(Null x) {
-    return x;
+  
+  public static Complex complex(double x, double y){
+    java.lang.System.out.println(y);
+    return new Complex(x,y);
   }
+  
+  public static double Re(Complex z){
+    return z.getReal();
+  }
+  
+  public static double Im(Complex z){
+    return z.getImaginary();
+  }
+  
+  
+  public static Complex Conj(Complex z){
+    java.lang.System.out.println("Im(z): " + z.getImaginary());
+    java.lang.System.out.println("Re(z): " + z.getReal());
+    return new Complex(z.getReal(),-1*z.getImaginary());
+  }
+  
+//  public static DoubleVector Re(SEXP x){
+//    if(x instanceof ComplexVector){
+//      ComplexVector vec = (ComplexVector)x;
+//      DoubleVector.Builder builder = new DoubleVector.Builder();
+//      for(Complex z : vec){
+//        java.lang.System.out.println(z.getReal());
+//        builder.add(z.getReal());
+//      }
+//      DoubleVector build = builder.build();
+//      java.lang.System.out.println(build.length());
+//      return build;
+//    }
+//    //TODO handle other cases
+//    return new DoubleVector(1);
+//  }
+  
 }
