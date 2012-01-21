@@ -16,14 +16,6 @@ public class ComplexNumberTest extends EvalTestCase {
   public void imaginaryPartOfConvertedDoubleShouldBeZero() throws IOException {
     topLevelContext.init();
     
-//    StringWriter stringWriter = new StringWriter();
-//    topLevelContext.getGlobals().setStdOut(new PrintWriter(stringWriter));
-
-//    eval("x <- 1");
-//    eval("y <-1");
-//    eval("z<- complex(real=x,imaginary=y)");
-//    eval("z<-sqrt(-1)");
-//    eval("print(Im(1))");
     assertThat( eval("Im(as.complex(1))"), equalTo(c(0)) );
   }
   
@@ -33,9 +25,9 @@ public class ComplexNumberTest extends EvalTestCase {
     assertThat(eval("Re(as.complex(2))"),equalTo(c(2)));
   }
   
-  @Ignore("TODO: Get vectorized operations working.")
   @Test
   public void vectorizedReal() throws IOException{
+    eval("sqrt(c(1,4,9))");
     assertThat(eval("Re(c(as.complex(1),as.complex(2)))[1]"),equalTo(c(1)));
     assertThat(eval("Re(c(as.complex(1),as.complex(2)))[2]"),equalTo(c(2)));
   }

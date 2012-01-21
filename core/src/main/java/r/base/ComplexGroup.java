@@ -11,18 +11,18 @@ import r.lang.SEXP;
 
 public class ComplexGroup {
 
-//  public static DoubleVector Mod(DoubleVector x) {
-//    return x;
-//  }
-// 
-//  public static IntVector Mod(IntVector x) {
-//    return x;
-//  }
-//
-//  public static Null Mod(Null x) {
-//    return x;
-//  }
-//  
+  public static DoubleVector Mod(DoubleVector x) {
+    return x;
+  }
+ 
+  public static IntVector Mod(IntVector x) {
+    return x;
+  }
+
+  public static Null Mod(Null x) {
+    return x;
+  }
+  
   public static double Mod(Complex z){
     return z.abs();
   }
