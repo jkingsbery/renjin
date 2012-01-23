@@ -51,7 +51,7 @@ public class TimeTest extends EvalTestCase {
     assertThat(eval("names(format(ct))"), equalTo(NULL));
   }
 
-//  @Ignore("This test seems to depend on the location or time settings.")
+  @Ignore("This test seems to depend on the location or time settings.")
   @Test
   public void printTime() throws IOException {
     topLevelContext.init();

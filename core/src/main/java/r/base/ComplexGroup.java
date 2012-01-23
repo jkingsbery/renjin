@@ -51,20 +51,4 @@ public class ComplexGroup {
     return new Complex(z.getReal(),-1*z.getImaginary());
   }
   
-//  public static DoubleVector Re(SEXP x){
-//    if(x instanceof ComplexVector){
-//      ComplexVector vec = (ComplexVector)x;
-//      DoubleVector.Builder builder = new DoubleVector.Builder();
-//      for(Complex z : vec){
-//        java.lang.System.out.println(z.getReal());
-//        builder.add(z.getReal());
-//      }
-//      DoubleVector build = builder.build();
-//      java.lang.System.out.println(build.length());
-//      return build;
-//    }
-//    //TODO handle other cases
-//    return new DoubleVector(1);
-//  }
-  
 }
