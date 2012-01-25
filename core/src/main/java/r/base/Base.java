@@ -511,11 +511,12 @@ public class Base {
     return complexValues;
   }
   
+  //TODO: replace this with log4j
   private static void print(ComplexVector values) {
-    java.lang.System.out.println(values);
     
   }
 
+  //TODO: replace this with log4j
   private static void print(double[] right) {
     List<Double> list = new ArrayList<Double>();
     if (right != null) {
@@ -523,7 +524,6 @@ public class Base {
         list.add(x);
       }
     }
-    java.lang.System.out.println(list);
   }
 
   public static ComplexVector c(double... d){
