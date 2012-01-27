@@ -3,7 +3,6 @@ package r.base;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import org.apache.commons.math.distribution.Distribution;
-
 import r.base.graphics.Graphics;
 import r.base.graphics.Par;
 import r.base.graphics.Plot;
@@ -11,7 +10,10 @@ import r.base.match.Duplicates;
 import r.base.match.Match;
 import r.base.matrix.Matrices;
 import r.base.model.Models;
+import r.base.optimize.Optimizations;
+import r.base.optimize.Roots;
 import r.base.random.RNG;
+import r.base.random.Sampling;
 import r.base.special.*;
 import r.base.subset.Subsetting;
 import r.base.time.Time;
@@ -25,7 +27,6 @@ import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Set;
 
-import r.base.random.Sampling;
 import static r.base.PPkind.*;
 import static r.base.PPprec.*;
 import static r.util.CDefines.RelOpType.*;
@@ -544,8 +545,8 @@ public class Primitives {
     f("intToBits", Types.class, 1, 11, 1);
     f("rawToBits", Types.class , 1, 11, 1);
     f("packBits", /*packBits*/ null, 1, 11, 2);
-    f("utf8ToInt", /*utf8ToInt*/ null, 1, 11, 1);
-    f("intToUtf8", /*intToUtf8*/ null, 1, 11, 2);
+    f("utf8ToInt", Text.class, 1, 11, 1);
+    f("intToUtf8", Text.class, 1, 11, 2);
     f("encodeString",Text.class, 1, 11, 5);
     f("iconv", /*iconv*/ null, 0, 11, 5);
     f("strtrim", Text.class, 0, 11, 2);
@@ -839,11 +840,11 @@ public class Primitives {
 
 /* Modelling Functionality */
 
-    f("nlm", /*nlm*/ null, 0, 11, 11);
-    f("fmin", /*fmin*/ null, 0, 11, 4);
+    f("nlm", Optimizations.class, 0, 11, 11);
+    f("fmin", Optimizations.class, 0, 11, 4);
     f("zeroin", /*zeroin*/ null, 0, 11, 5);
-    f("zeroin2", /*zeroin2*/ null, 0, 11, 7);
-    f("optim", /*optim*/ null, 0, 11, 7);
+    f("zeroin2", Roots.class, 0, 11, 7);
+    f("optim", Optimizations.class, 0, 11, 7);
     f("optimhess", /*optimhess*/ null, 0, 11, 4);
     f("terms.formula", Models.class, 0, 11, 5);
     f("update.formula", /*updateform*/ null, 0, 11, 2);
